@@ -2,7 +2,7 @@ deeplink
 =======
 
 Author: Leo Tang
-Profile: http://www.linkedin.com/in/lijuntang/
+(Profile: http://www.linkedin.com/in/lijuntang)
 
 
 ## Implementation of some deep learning algorithms. ##

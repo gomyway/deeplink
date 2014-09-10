@@ -5,14 +5,15 @@ Author: Leo Tang
 (Profile: http://www.linkedin.com/in/lijuntang)
 
 
-## Implementation of some deep learning algorithms. ##
+## Implementation of deep learning algorithms that works in practice ##
 
 GPU-based python implementation of
 
 1.  Feed-forward Neural Nets
 2.  Restricted Boltzmann Machines
 3.  Deep Belief Nets
-4.  smart gpu/cpu memory management reduces out of memory error
+4.  Smart gpu/cpu memory management reduces out of memory error
+5.  Works on both linux and windows
 
 Installation for windows
 ======================
@@ -50,24 +51,7 @@ create symlic:
 gpu_lock_0 -> /dev/null
 gpu_lock_1 -> /dev/null
 
-=======
 
-http://xcorr.net/2013/04/21/memory-management-in-gnumpy/
-
-import gnumpy as gpu
-def force_deallocate(thesize):
-    try:
-        gpu._cmsForReuse[thesize].pop()
-        gpu.__memoryInUse -= thesize*4
-        del gc.garbage[:]
-    except IndexError:
-        #Can't deallocate if it don't exist, can ya?
-        pass
- 
-#assuming you have an array called a
-thesize = a.size
-del a #delete variable
-force_deallocate(thesize) #deallocate the corresponding memory
 
 demos for mnist data:  http://yann.lecun.com/exdb/mnist/
 
@@ -81,12 +65,7 @@ demos for mnist data:  http://yann.lecun.com/exdb/mnist/
  	1.34% error rate, 3103.61+221.416 seconds
  6. python mnist_runner.py  --dbn_nn --layer_sizes 2500 2000 1500 1000 500 10  --output_activation_func Softmax --learn_rate 0.1 --batch_size 64 --epochs 100 --gpu_buffer_size_MB 64 --train_file ~/deeplink/data/mnist.npz > mnist_dbn_6_layer_nn.log.`date +%Y-%m-%d-%H-%M`  2>&1 &
  	1.9% error rate,  9024.27 seconds
- 	
- demos for kaggle data:
- 1. rf benchmark:
-    cd  ~/work/kaggle/JobSalaryPrediction/RandomForestBenchmark ; python train.py ; python predict.py
-    Mean absolute error : 8015.67840966
-   
+ 
 
 neuralnet class: http://www.willamette.edu/~gorr/classes/cs449/intro.html
 

@@ -1,8 +1,7 @@
 deeplink
 =======
 
-Author: Leo Tang
-(Profile: http://www.linkedin.com/in/lijuntang)
+Author: [Leo Tang](http://www.linkedin.com/in/lijuntang)
 
 
 ## Implementation of deep learning algorithms that works in practice ##

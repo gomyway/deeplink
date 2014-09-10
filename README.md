@@ -1,6 +1,10 @@
 deeplink
 =======
 
+Author: Leo Tang
+Profile: http://www.linkedin.com/in/lijuntang/
+
+
 ## Implementation of some deep learning algorithms. ##
 
 GPU-based python implementation of
@@ -8,6 +12,7 @@ GPU-based python implementation of
 1.  Feed-forward Neural Nets
 2.  Restricted Boltzmann Machines
 3.  Deep Belief Nets
+4.  smart gpu/cpu memory management reduces out of memory error
 
 Installation for windows
 ======================

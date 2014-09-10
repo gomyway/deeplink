@@ -1,4 +1,6 @@
 deeplink
 ========
 
-deep learning project
+deep learning project with samples
+
+

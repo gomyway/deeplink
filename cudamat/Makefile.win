@@ -1,0 +1,15 @@
+
+all: libcudamat.dll libcudamat_conv.dll
+
+libcudamat.dll: cudamat.cu cudamat_kernels.cu cudamat.cuh cudamat_kernels.cuh learn.cu learn_kernels.cu
+	nvcc -O --ptxas-options=-v \
+		-o libcudamat.dll \
+		--shared cudamat.cu cudamat_kernels.cu learn.cu learn_kernels.cu -lcublas
+
+libcudamat_conv.dll: cudamat_conv.cu cudamat_conv_kernels.cu cudamat_conv.cuh cudamat.cuh cudamat_conv_kernels.cuh
+	nvcc -O --ptxas-options=-v \
+		-o libcudamat_conv.dll \
+		--shared cudamat_conv.cu cudamat_conv_kernels.cu -lcublas
+	
+clean:
+	rm -rf *.dll
